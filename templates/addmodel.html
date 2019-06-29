@@ -1,0 +1,18 @@
+</style>
+{% include 'top.html' %}
+    <div class="content">
+          <div class="container">
+              <h1 class="title">Add Model</h1>
+              <h2>Department: {{department}}</h2>
+              <hr>
+              <form style=text-align:center class="addmodel" method="POST" action="{{url_for('add_model')}}"><br><br>
+                  Manufacturer: <input type="text" name="manufacturer" placeholder="manufacturer(required)" maxlength="20" autofocus required><br><br>
+                  Model Number: <input type="text" name="modelNumber" placeholder="modelNumber(required)" maxlength="10" autofocus required><br><br>
+                  Description: <input type="text" name="description" placeholder="description" maxlength="80"><br><br>
+                  Weight: <input type="number" step='0.01'name="weight" placeholder="(upto 2 decimal places)" required><br><br>
+                  Max Number: <input type="number" name="maxNumber" placeholder="maxNumber(required)" required><br><br><br>
+                  <button class="flat" type="submit">Add Model</button>
+              </form>
+          </div>
+    </div>
+{% include 'bottom.html'%}

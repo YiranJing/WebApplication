@@ -1,0 +1,28 @@
+{% include 'top.html' %}
+<div class="content">
+    <div class="container">
+        <h1 class="title">Model Cost</h1>
+        <h2>Model: {{model}}</h2>
+        <h2>Manufacturer: {{manufacturer}}</h2>
+        <p><a href="{{ url_for('modeldetail', manufacturer=manufacturer,modelNumber=model) }}">Model information</a></p>
+        <table class="styled">
+            <thead>
+                <tr>
+                    <th>Year</th>
+                    <th>Month</th>
+                    <th>Average Cost</th>
+                </tr>
+            </thead>
+            <tbody>
+              {% for emp in cost %}
+                  <tr>
+                        <td>{{ emp[0] }}</td>
+                        <td>{{ emp[1] }}</td>
+                        <td>{{ emp[2] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% include 'bottom.html' %}

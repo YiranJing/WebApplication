@@ -1,0 +1,26 @@
+{% include 'top.html' %}
+<div class="content">
+    <div class="container">
+        <h1 class="title">Show All History</h1>
+
+        <table class="styled">
+            <thead>
+                <tr>
+                    <th>Device ID</th>
+                    <th>Employee ID</th>
+                    <th>Employee Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for h in history %}
+                <tr class="clickable-tr" data-href="{{ url_for('device', deviceid=h[0])}}">
+                        <td>{{ h[0] }}</td>
+                        <td>{{ h[1] }}</td>
+                        <td>{{ h[2] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% include 'bottom.html' %}
